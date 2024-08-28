@@ -57,8 +57,15 @@ export async function POST(req: Request) {
       username: username || '', // Ensure username is never null
       firstName: first_name || '', // Provide default value if null
       lastName: last_name || '', // Provide default value if null
-      photo: image_url || '', // Provide default value if null
-    };
+      photo: image_url, // Provide default value if null
+      };
+
+      console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
+      console.log('Webhook body:', body)
+      
+      if (evt.type === 'user.created') {
+        console.log('userId:', evt.data.id)
+      }
 
     const newUser = await createUser(user);
 
