@@ -1,7 +1,7 @@
 import { SignUp } from '@clerk/nextjs'
 
 const SignUpPage = () => {
-  return <SignUp routing="hash" />
+  return <SignUp />
 }
 
 export default SignUpPage
